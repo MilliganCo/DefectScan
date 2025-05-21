@@ -1,0 +1,81 @@
+# --------------------
+# Общие
+# --------------------
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.vscode/
+.idea/
+*.env
+.env.*
+
+# Кэш npm/Yarn
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --------------------
+# Android
+# --------------------
+# Gradle
+.gradle/
+**/build/
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Android Studio
+*.iml
+*.hprof
+local.properties
+
+# APK
+*.apk
+*.ap_
+
+# --------------------
+# iOS / macOS
+# --------------------
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad
+xcuserdata/
+DerivedData/
+build/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# --------------------
+# React Native / Flutter (если используется)
+# --------------------
+# React Native
+ios/Pods/
+android/app/build/
+android/.gradle/
+
+# Flutter
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.buildlog/
+
+# --------------------
+# Прочее
+# --------------------
+# JetBrains IDEs
+*.iml
+.idea/
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Temp files
+*.swp
+*~
