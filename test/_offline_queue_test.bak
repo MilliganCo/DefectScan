@@ -1,0 +1,46 @@
+// test/offline_queue_test.dart
+import 'package:test/test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'dart:io';
+import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
+import 'package:path_provider_platform_interface/src/method_channel_path_provider.dart';
+import 'package:fltrdfctscn/core/network/offline_queue.dart';
+import 'package:fltrdfctscn/core/network/api_client.dart';
+
+class _MockApi extends Mock implements ApiClient {}
+
+void main() {
+  late OfflineQueue queue;
+  late _MockApi api;
+
+  setUp(() {
+    PathProviderPlatform.instance = FakePathProviderPlatform();
+    api = _MockApi();
+    queue = OfflineQueue(api);
+  });
+
+  test('stores request offline and flushes later', () async {
+    when(() => api.postJson('/upload', any())).thenThrow(SocketException(''));
+
+    await queue.add('/upload', {'foo': 1});
+    expect(Directory(
+            '${(await queue._dir).path}') // ignore: invalid_use_of_protected_member
+        .listSync()
+        .length,
+        1);
+
+    // simulate online
+    when(() => api.postJson('/upload', any()))
+        .thenAnswer((_) async => {'status': 'ok'});
+    await queue.flush();
+
+    expect(
+        Directory(
+                '${(await queue._dir).path}') // ignore: invalid_use_of_protected_member
+            .listSync()
+            .length,
+        0);
+  });
+}
+// class FakePathProviderPlatform extends Mock
+//     with MockPlatformInterfaceMixin

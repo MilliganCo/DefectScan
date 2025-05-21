@@ -1,0 +1,27 @@
+# analysis_options.yaml
+
+# Подключаем стандартные рекомендации Flutter (очень аккуратные)
+include: package:flutter_lints/flutter.yaml
+
+linter:
+  rules:
+    # ✅ Предлагать использовать const, где можно (ускоряет приложение)
+    prefer_const_constructors: true
+
+    # ✅ Не настаивать на импорт из пакета (можно писать относительный import)
+    always_use_package_imports: false
+
+    # ✅ Предлагать final, если переменная не меняется
+    prefer_final_locals: true
+
+    # ✅ Подсказывать, если переменная не используется
+
+    # ✅ Предупреждать, если поле можно сделать final
+    prefer_final_fields: true
+    # ❌ Не включаем строгие правила по именованию, типам, пустым catch и т. п.
+
+analyzer:
+  exclude:
+    # Исключаем auto-generated файлы от build_runner
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"

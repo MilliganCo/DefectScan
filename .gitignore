@@ -1,81 +1,45 @@
-# --------------------
-# Общие
-# --------------------
-.DS_Store
-Thumbs.db
+# Miscellaneous
+*.class
 *.log
-*.tmp
-.vscode/
-.idea/
-*.env
-.env.*
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
 
-# Кэш npm/Yarn
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# --------------------
-# Android
-# --------------------
-# Gradle
-.gradle/
-**/build/
-!gradle-wrapper.jar
-!gradle-wrapper.properties
-
-# Android Studio
+# IntelliJ related
 *.iml
-*.hprof
-local.properties
+*.ipr
+*.iws
+.idea/
 
-# APK
-*.apk
-*.ap_
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
 
-# --------------------
-# iOS / macOS
-# --------------------
-# Xcode
-*.xcworkspace
-*.xcuserstate
-*.xcuserdatad
-xcuserdata/
-DerivedData/
-build/
-
-# CocoaPods
-Pods/
-Podfile.lock
-
-# --------------------
-# React Native / Flutter (если используется)
-# --------------------
-# React Native
-ios/Pods/
-android/app/build/
-android/.gradle/
-
-# Flutter
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
-.packages
 .pub-cache/
-.buildlog/
+.pub/
+/build/
 
-# --------------------
-# Прочее
-# --------------------
-# JetBrains IDEs
-*.iml
-.idea/
+# Symbolication related
+app.*.symbols
 
-# Windows
-Thumbs.db
-ehthumbs.db
-Desktop.ini
+# Obfuscation related
+app.*.map.json
 
-# Temp files
-*.swp
-*~
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
