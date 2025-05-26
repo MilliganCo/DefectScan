@@ -9,13 +9,13 @@ class AppTheme {
   static const _title  = 22.0;   // было 20
   static const _body   = 16.0;   // было 14
   static const _button = 18.0;
-
   static ThemeData light() => ThemeData(
-        useMaterial3          : true,
+        useMaterial3: true,
         scaffoldBackgroundColor: _bg,
-        colorScheme           : ColorScheme.light(
-          primary  : _accent,
+        colorScheme: ColorScheme.light(
+          primary: _accent,
           secondary: _accent,
+          surface: const Color(0xFFF0F0F0), // Clay base color
         ),
         textTheme: TextTheme(
           titleLarge: TextStyle(

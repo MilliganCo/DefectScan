@@ -26,6 +26,7 @@ dependencies:
   path_provider: ^2.1.2
   webview_flutter: ^4.7.0
   lottie: ^3.1.2
+  clay_containers: ^0.3.2
 
 dev_dependencies:
   flutter_test:
@@ -41,6 +42,15 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   assets: 
     - assets/lottie/ok.json
+    - assets/icons/defects/
+    - assets/icons/defects/defect_bad_top.png
+    - assets/icons/defects/defect_bad_bottom.png
+    - assets/icons/defects/defect_bad_set.png
+    - assets/icons/defects/defect_size_top.png
+    - assets/icons/defects/defect_size_bottom.png
+    - assets/icons/defects/defect_size_set.png
+    - assets/icons/defects/defect_color.png
+    - assets/icons/defects/defect_other.png
+    - assets/icons/defects/defect_ok.png

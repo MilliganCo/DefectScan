@@ -71,25 +71,15 @@ class BasketDrawer extends ConsumerWidget {
                 itemBuilder: (_, i) {
                   final r = basket.rows[i];
 
-                  // long-press для «другое» с комментом
-                  return GestureDetector(
-                    onLongPress: () {
-                      if (r.defect == 'другое' && r.comment.isNotEmpty) {
-                        showDialog(
-                          context: context,
-                          builder: (_) => AlertDialog(
-                            title  : const Text('Комментарий'),
-                            content: Text(r.comment),
-                            actions: [
-                              TextButton(
-                                onPressed: () => Navigator.pop(context),
-                                child: const Text('OK'),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                    },
+                  // Показываем Tooltip вместо AlertDialog для комментариев к типу "other"
+                  return Tooltip(
+                    message: r.defect.toLowerCase() == 'другое' && r.comment.isNotEmpty 
+                      ? r.comment 
+                      : '',
+                    preferBelow: false,
+                    verticalOffset: 20,
+                    showDuration: const Duration(seconds: 2),
+                    waitDuration: const Duration(milliseconds: 500),
                     child: ListTile(
                       title   : Text(_rowTitle(r)),
                       trailing: Text('${r.qty} шт'),
